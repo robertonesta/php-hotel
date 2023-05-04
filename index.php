@@ -81,7 +81,7 @@ Se non viene specificato nessun filtro, visualizzare come in precedenza tutti gl
             <button type="submit" class="btn btn-primary">Filter</button>
         </form>
         
-        <table class="table table-dark table-striped text-center w-70">
+        <table class="table table-dark table-striped text-center w-75">
             <thead>
                 <tr>
                     <th>Name</th>
