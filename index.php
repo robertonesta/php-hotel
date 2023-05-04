@@ -93,7 +93,7 @@ Se non viene specificato nessun filtro, visualizzare come in precedenza tutti gl
             </thead>
             <tbody>
             <?php foreach ($hotels as $hotel) :
-                if (($parkingLot === null) && ($hotel["vote"] >= $vote)) : ?>
+                if (($parkingLot === null || $hotel["parking"]) && ($hotel["vote"] >= $vote)) : ?>
                 <tr>
                     <?php foreach ($hotel as $key => $searchfilter) : ?>
                         <td>
