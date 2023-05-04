@@ -64,7 +64,7 @@ Aggiungere un secondo campo al form che permetta di filtrare gli hotel per voto 
 NOTA: deve essere possibile utilizzare entrambi i filtri contemporaneamente (es. ottenere una lista con hotel che dispongono di parcheggio e che hanno un voto di tre stelle o superiore)
 Se non viene specificato nessun filtro, visualizzare come in precedenza tutti gli hotel.-->
 <div class="appHeader text-center align-items-center">
-    <h3>Hotel Filter</h3>
+    <h1>Hotel Filter</h1>
 </div>
 <div class="appMain">
     <div class="container d-flex flex-column align-items-center justify-content-center">
@@ -93,7 +93,7 @@ Se non viene specificato nessun filtro, visualizzare come in precedenza tutti gl
             </thead>
             <tbody>
             <?php foreach ($hotels as $hotel) :
-                if (($parkingLot === null || $hotel["parking"]) && ($vote == null || $hotel["vote"] >= $vote)) : ?>
+                if (($parkingLot === null) && ($hotel["vote"] >= $vote)) : ?>
                 <tr>
                     <?php foreach ($hotel as $key => $searchfilter) : ?>
                         <td>
@@ -109,7 +109,8 @@ Se non viene specificato nessun filtro, visualizzare come in precedenza tutti gl
                         </td>                        
                     <?php endforeach; ?>
                 </tr>
-            <?php endif; endforeach;?>
+            <?php endif; ?>
+            <?php endforeach; ?>
             </tbody>
         </table>
     </div>
