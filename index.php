@@ -36,7 +36,7 @@ $hotels = [
         'distance_to_center' => 50
     ],
 ];
-$parkingLot = array_key_exists("parkingLot", $_GET) ? $_GET["parkingLot"] : "";
+$parkingLot = $_GET["parkingLot"];
 $vote = array_key_exists("vote", $_GET) ? $_GET["vote"] : "";
 
 ?>
