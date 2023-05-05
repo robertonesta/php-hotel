@@ -36,8 +36,8 @@ $hotels = [
         'distance_to_center' => 50
     ],
 ];
-$parkingLot = $_GET["parkingLot"];
-$vote = $_GET["vote"];
+$parkingLot = array_key_exists("parkingLot", $_GET) ? $_GET["parkingLot"] : "";
+$vote = array_key_exists("vote", $_GET) ? $_GET["vote"] : "";
 
 ?>
 
@@ -69,11 +69,11 @@ Se non viene specificato nessun filtro, visualizzare come in precedenza tutti gl
 <div class="appMain">
     <div class="container d-flex flex-column align-items-center justify-content-center">
         <form class="my-3" action="index.php" method="get">
-            <div class="form-check p-0 text-center mb-5 d-flex align-items-center">
+            <div class="form-check p-0 text-center d-flex align-items-center">
                 <label class="form-check-label mb-2" for="parkingLot">Check for hotels with parking lots</label>
                 <input class="form-check-input m-0" name="parkingLot" type="checkbox" id="parkingLot">
             </div>
-            <div class="mb-5">
+            <div>
                 <label for="vote" class="form-label mb-2">Vote</label>
                 <input type="number"
                 class="form-control mb-2" min="1" max="5" name="vote" id="vote" aria-describedby="voteHelper" placeholder="Choose the vote">
